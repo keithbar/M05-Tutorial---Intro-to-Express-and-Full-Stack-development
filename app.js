@@ -10,7 +10,12 @@ app.set("view engine", "ejs");
 app.listen(3000);
 
 app.get("/", (req, res) => {
-    res.render("index", {title: "Home"});
+    const blogs = [
+        {title: "Yoshi finds eggs", snippet: "blah blah blah"},
+        {title: "Mario finds stars", snippet: "120 of them"},
+        {title: "How to defeat Bowser", snippet: "throw em!"}
+    ];
+    res.render("index", {title: "Home", blogs});
 });
 
 app.get("/about", (req, res) => {
